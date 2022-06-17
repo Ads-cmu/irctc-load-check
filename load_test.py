@@ -10,7 +10,7 @@ URL =  "https://www.google.com/"#os.environ.get('URL')
 
 for j in range(5):
     for i in range(5):
-        resp = requests.get(URL)#, headers=headers)
+        resp = requests.get(URL, verify=False)#, headers=headers)
 
         if resp.status_code==503 or "organization" in str(resp.content) or "organisation" in str(resp.content):
             requests.get("https://maker.ifttt.com/trigger/train_website_crash/with/key/"+IFFTT_KEY)
