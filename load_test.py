@@ -4,7 +4,7 @@ import os
 import time
 
 IFFTT_KEY = "AAGQ57iePd71iPLT6qJth"#os.environ.get('IFFTT_KEY')
-URL =  "https://www.irctc.co.in/"#os.environ.get('URL')
+URL =  "https://www.google.com/"#os.environ.get('URL')
 #HEADERS = os.environ.get('HEADERS')
 #headers = ast.literal_eval(HEADERS)
 
