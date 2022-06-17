@@ -3,17 +3,18 @@ import ast
 import os
 import time
 
-IFFTT_KEY = os.environ.get('IFFTT_KEY')
-URL =  os.environ.get('URL')
-HEADERS = os.environ.get('HEADERS')
-headers = ast.literal_eval(HEADERS)
+IFFTT_KEY = "AAGQ57iePd71iPLT6qJth"#os.environ.get('IFFTT_KEY')
+URL =  "https://www.irctc.co.in/"#os.environ.get('URL')
+#HEADERS = os.environ.get('HEADERS')
+#headers = ast.literal_eval(HEADERS)
 
 for j in range(5):
     for i in range(5):
-        resp = requests.get(URL, headers=headers)
+        resp = requests.get(URL)#, headers=headers)
 
-        if resp.status_code==503 or "organization" in str(resp.content) or "organisation" in str(resp.content):
-            requests.get("https://maker.ifttt.com/trigger/VisaLoad/with/key/"+IFFTT_KEY)
+        if resp.status_code==200 or "organization" in str(resp.content) or "organisation" in str(resp.content):
+            resp2=requests.get("https://maker.ifttt.com/trigger/VisaLoad/with/key/"+IFFTT_KEY)
+            print(resp2)
             break
         print("Executed ", resp.status_code)
         time.sleep(5)
