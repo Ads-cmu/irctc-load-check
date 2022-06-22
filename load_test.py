@@ -12,7 +12,7 @@ for j in range(5):
     for i in range(5):
         resp = requests.get(URL, verify=False)#, headers=headers)
 
-        if resp.status_code==503 or "organization" in str(resp.content) or "organisation" in str(resp.content):
+        if resp.status_code==200 or "organization" in str(resp.content) or "organisation" in str(resp.content):
             requests.get("https://maker.ifttt.com/trigger/train_website_crash/with/key/"+IFFTT_KEY)
             break
         print("Executed ", resp.status_code)
